@@ -20,9 +20,11 @@ public class NodeImpl implements Node {
 		return name;
 	}
 
-	public void add(NodeImpl n) {
-		next.add(n);
-		n.prev.add(this);
+	public void add(NodeImpl... n) {
+		for (NodeImpl node : n) {
+			next.add(node);
+			node.prev.add(this);
+		}
 	}
 
 	@Override

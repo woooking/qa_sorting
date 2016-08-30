@@ -6,6 +6,8 @@ out/
 *.ipr
 *.iws
 
+.DS_Store
+
 build/*
 !build/docs/
 !build/libs/
