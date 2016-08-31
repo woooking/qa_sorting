@@ -2,6 +2,7 @@ package com.github.woooking.qa_sorting.api;
 
 import com.github.woooking.qa_sorting.document.IDocument;
 import com.github.woooking.qa_sorting.document.IIndexer;
+import com.github.woooking.qa_sorting.document.stackoverflow.SOServer;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.WebAppContext;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * The main class of the QA server.
+ * The main class of the QA server. A QA server can handle a few services throw method {@link #addService(String, IIndexer, int)}. {@link SOServer} is a good example to start with.
  */
 public class QAServer extends Server {
 	private class QueryHandler<T extends IDocument> extends HttpServlet {
